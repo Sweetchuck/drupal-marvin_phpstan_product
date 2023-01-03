@@ -1,0 +1,10 @@
+parameters:
+  scanDirectories:
+    - ../docroot/core/
+#    - ../docroot/modules/contrib/
+  paths:
+#    - ../docroot/profiles/custom/
+    - ../docroot/modules/custom/
+#    - ../docroot/themes/custom/
+#    - ../drush/Commands/custom/
+#    - ../tests/src/
