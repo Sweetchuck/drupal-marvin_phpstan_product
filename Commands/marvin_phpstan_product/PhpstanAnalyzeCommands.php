@@ -11,6 +11,9 @@ use Drush\Boot\DrupalBootLevels;
 use Drush\Commands\marvin_phpstan\PhpstanAnalyzeCommandsBase;
 use Robo\Contract\TaskInterface;
 
+/**
+ * @deprecated
+ */
 class PhpstanAnalyzeCommands extends PhpstanAnalyzeCommandsBase {
 
   /**
@@ -22,7 +25,7 @@ class PhpstanAnalyzeCommands extends PhpstanAnalyzeCommandsBase {
   )]
   public function onEventMarvinGitHookPreCommit(): array {
     return [
-      'marvin_phpstan_product.phpstan_analyze_extension' => [
+      'Invoke-PhpStanAnalyze.marvin_phpstan_product' => [
         'weight' => -200,
         'task' => $this->getTaskLintPhpstanAnalyzeExtension($this->getProjectRootDir()),
       ],
@@ -38,7 +41,7 @@ class PhpstanAnalyzeCommands extends PhpstanAnalyzeCommandsBase {
   )]
   public function onEventMarvinLint(): array {
     return [
-      'marvin_phpstan_product.phpstan_analyze_extension' => [
+      'Invoke-PhpStanAnalyze.marvin_phpstan_product' => [
         'weight' => -200,
         'task' => $this->getTaskLintPhpstanAnalyzeExtension($this->getProjectRootDir()),
       ],
